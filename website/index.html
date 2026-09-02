@@ -371,9 +371,6 @@
         }
 
         /* Services Section */
-        .services {
-        }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -478,27 +475,8 @@
             transform: translateY(-4px);
         }
 
-        /* Legacy service-item styles for backward compatibility if needed */
-        .service-item {
-            display: none;
-        }
-
-        .service-item-icon {
-            display: none;
-        }
-
-        .service-item-content h3 {
-            display: none;
-        }
-
-        .service-item-content p {
-            display: none;
-        }
 
         /* Pricing Section */
-        .pricing {
-        }
-
         .pricing-subtitle {
             text-align: center;
             font-size: 18px;
@@ -713,9 +691,6 @@
         }
 
         /* Service Areas Section */
-        .service-areas {
-        }
-
         .service-areas-subtitle {
             text-align: center;
             font-size: 16px;
@@ -815,9 +790,6 @@
         }
 
         /* How It Works */
-        .how-it-works {
-        }
-
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -853,9 +825,6 @@
         }
 
         /* Testimonials */
-        .testimonials {
-        }
-
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -2358,16 +2327,16 @@
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul>
-                    <li><a href="#services">Window Cleaning</a></li>
-                    <li><a href="#services">Solar Panel Cleaning</a></li>
-                    <li><a href="#services">Screen Cleaning</a></li>
-                    <li><a href="#services">Track Cleaning</a></li>
+                    <li><a href="services.html">Window Cleaning</a></li>
+                    <li><a href="services.html">Solar Panel Cleaning</a></li>
+                    <li><a href="services.html">Screen Cleaning</a></li>
+                    <li><a href="services.html">Track Cleaning</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Company</h3>
                 <ul>
-                    <li><a href="#why">Why ClearVue</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
@@ -2545,10 +2514,6 @@
         }
 
         // Smooth scroll functions
-        function scrollToServices() {
-            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
-        }
-
         function scrollToContact() {
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
@@ -2556,22 +2521,6 @@
         // Navigate to service page
         function navigateToService(url) {
             window.location.href = url;
-        }
-
-        // Service Areas Toggle (kept for backward compatibility if needed)
-        function toggleServiceArea(element) {
-            const regionAreas = element.nextElementSibling;
-            const toggle = element.querySelector('.area-toggle');
-
-            if (regionAreas && regionAreas.style.display === 'none') {
-                regionAreas.style.display = 'block';
-                toggle.textContent = '−';
-                regionAreas.classList.add('open');
-            } else if (regionAreas) {
-                regionAreas.style.display = 'none';
-                toggle.textContent = '+';
-                regionAreas.classList.remove('open');
-            }
         }
 
         // Window Cleaning Type - mutually exclusive

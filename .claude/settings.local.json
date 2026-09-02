@@ -66,7 +66,13 @@
       "Bash(awk '/<form class=\"contact-form\">/,/<\\\\/form>/ {print NR\": \"$0}' /tmp/website_server/index.html)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(grep -n \"^        \\\\.[a-z-]* {$\" \"/Users/artembagryantsev/Documents/Claude Code/Window Cleaning website/website/index.html\")",
+      "Bash(grep -A1 \"^        \\\\.[a-z-]* {$\" \"/Users/artembagryantsev/Documents/Claude Code/Window Cleaning website/website/index.html\")",
+      "Bash(awk '$1 > 1')"
     ]
   }
 }
