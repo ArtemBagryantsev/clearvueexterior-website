@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearVue Exterior - Scroll-Driven Background Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0D1B2A;
+            color: #333;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Canvas Background */
+        #scrollCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: block;
+            z-index: 1;
+        }
+
+        /* Content Overlay */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: 'Montserrat', sans-serif;
+            max-width: 600px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            max-width: 500px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #E0E0E0;
+        }
+
+        .cta-button {
+            background: #0EA5B5;
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cta-button:hover {
+            background: #0D8FA3;
+            transform: translateY(-2px);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: rgba(255, 255, 255, 0.6);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Content Section */
+        .content-section {
+            position: relative;
+            z-index: 15;
+            background: white;
+            padding: 80px 60px;
+            margin-top: 100vh;
+            min-height: 100vh;
+        }
+
+        .content-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            margin-bottom: 24px;
+            color: #0D1B2A;
+        }
+
+        .content-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .content-section {
+                padding: 60px 40px;
+            }
+
+            .content-section h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll-Driven Canvas Background -->
+    <canvas id="scrollCanvas"></canvas>
+
+    <!-- Hero Section with Text Overlay -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Crystal-Clear Windows. Professional Results.</h1>
+            <p>Experience the ClearVue Exterior difference. Premium equipment, pristine results, trusted service.</p>
+            <button class="cta-button">Get Your Free Estimate</button>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24">
+                <polyline points="12 5 12 19"></polyline>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <h2>Why Choose ClearVue Exterior?</h2>
+        <p>We invest in professional-grade equipment and expert craftsmanship to deliver results you can trust.</p>
+        <p>Our commitment to quality, attention to detail, and personalized service sets us apart from DIY and budget cleaning services.</p>
+    </section>
+
+    <script>
+        class ScrollDrivenAnimation {
+            constructor() {
+                this.canvas = document.getElementById('scrollCanvas');
+                this.ctx = this.canvas.getContext('2d', { alpha: false });
+
+                // Image paths (relative to website root)
+                this.images = [
+                    '../assets/references/clearvue-hero-reference.png',
+                    '../assets/references/clearvue-material-reference.png',
+                    '../assets/references/clearvue-workspace-reference.png'
+                ];
+
+                this.loadedImages = [];
+                this.scrollProgress = 0;
+                this.isLoading = true;
+
+                // Setup
+                this.resizeCanvas();
+                this.loadImages();
+                this.setupEventListeners();
+                this.render();
+            }
+
+            resizeCanvas() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            loadImages() {
+                let loadedCount = 0;
+
+                this.images.forEach((src, index) => {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    img.onload = () => {
+                        this.loadedImages[index] = img;
+                        loadedCount++;
+                        if (loadedCount === this.images.length) {
+                            this.isLoading = false;
+                        }
+                    };
+                    img.onerror = () => {
+                        console.warn(`Failed to load image: ${src}`);
+                        loadedCount++;
+                        if (loadedCount === this.images.length) {
+                            this.isLoading = false;
+                        }
+                    };
+                    img.src = src;
+                });
+            }
+
+            setupEventListeners() {
+                window.addEventListener('scroll', () => this.updateScroll());
+                window.addEventListener('resize', () => this.resizeCanvas());
+            }
+
+            updateScroll() {
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                this.scrollProgress = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
+            }
+
+            drawImage(img, phase) {
+                if (!img) return;
+
+                const canvas = this.canvas;
+                const ctx = this.ctx;
+
+                // Calculate zoom and pan based on phase
+                const zoom = 1 + phase * 0.15; // Slow push-in effect
+                const panX = Math.sin(phase * Math.PI * 2) * 20; // Subtle orbital movement
+                const panY = Math.cos(phase * Math.PI * 2) * 15;
+
+                // Calculate image dimensions maintaining aspect ratio
+                const imgAspect = img.width / img.height;
+                const canvasAspect = canvas.width / canvas.height;
+
+                let drawWidth, drawHeight, drawX, drawY;
+
+                if (imgAspect > canvasAspect) {
+                    drawHeight = canvas.height * zoom;
+                    drawWidth = drawHeight * imgAspect;
+                } else {
+                    drawWidth = canvas.width * zoom;
+                    drawHeight = drawWidth / imgAspect;
+                }
+
+                drawX = (canvas.width - drawWidth) / 2 + panX;
+                drawY = (canvas.height - drawHeight) / 2 + panY;
+
+                // Draw image
+                ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+            }
+
+            blendImages(img1, img2, blendFactor) {
+                if (!img1 || !img2) return;
+
+                const canvas = this.canvas;
+                const ctx = this.ctx;
+
+                // Draw first image at full opacity
+                this.drawImage(img1, 0);
+
+                // Draw second image with transparency for blend
+                ctx.globalAlpha = blendFactor;
+                this.drawImage(img2, blendFactor);
+                ctx.globalAlpha = 1;
+            }
+
+            render = () => {
+                const ctx = this.ctx;
+                const progress = this.scrollProgress;
+
+                // Clear canvas
+                ctx.fillStyle = '#0D1B2A';
+                ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                if (this.isLoading || this.loadedImages.length === 0) {
+                    // Show loading state
+                    ctx.fillStyle = '#fff';
+                    ctx.font = '16px Open Sans';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('Loading..', this.canvas.width / 2, this.canvas.height / 2);
+                } else {
+                    // Three-phase animation sequence
+                    if (progress < 0.33) {
+                        // Phase 1: Hero equipment (0-33%)
+                        const phase1Progress = progress / 0.33;
+                        this.drawImage(this.loadedImages[0], phase1Progress * 0.3);
+                    } else if (progress < 0.66) {
+                        // Phase 2: Material details with transition (33-66%)
+                        const phase2Progress = (progress - 0.33) / 0.33;
+                        this.blendImages(this.loadedImages[0], this.loadedImages[1], phase2Progress);
+                    } else {
+                        // Phase 3: Workspace view with transition (66-100%)
+                        const phase3Progress = (progress - 0.66) / 0.34;
+                        this.blendImages(this.loadedImages[1], this.loadedImages[2], phase3Progress);
+                    }
+                }
+
+                requestAnimationFrame(this.render);
+            };
+        }
+
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new ScrollDrivenAnimation();
+        });
+    </script>
+</body>
+</html>

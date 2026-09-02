@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClearVue Exterior - Professional window and exterior cleaning services in Orange County. Owner-operated, premium equipment, crystal-clear results.">
+    <title>ClearVue Exterior | Professional Window Cleaning | Orange County</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1A3A52;
+            --teal: #00B8E6;
+            --cyan: #00D4FF;
+            --sky: #E0F7FF;
+            --orange: #FF8C00;
+            --sunset: #FF6B35;
+            --gray: #6B7280;
+            --light-gray: #F9FAFB;
+            --white: #FFFFFF;
+            --off-white: #F3F4F6;
+            --dark-gray: #1F2937;
+            --light-text: #4B5563;
+            --light-bg: #D4ECF0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--light-text);
+            line-height: 1.6;
+            background: linear-gradient(to right, #FFFFFF 0%, #E8F5F7 50%, #D4ECF0 100%);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 56px;
+        }
+
+        h2 {
+            font-size: 42px;
+            color: var(--navy);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--sunset);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--teal);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Header / Navigation */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 0px 40px;
+            height: 80px;
+            overflow: visible;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-icon {
+            width: auto;
+            height: 240px;
+            display: block;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            object-fit: contain;
+            background: transparent;
+            line-height: 0;
+            margin: -70px 0;
+        }
+
+        .logo-container:hover .logo-icon {
+            filter: drop-shadow(0 4px 12px rgba(14, 165, 181, 0.25));
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--teal);
+        }
+
+        nav {
+            display: flex;
+            gap: 0;
+        }
+
+        nav a, .nav-item {
+            color: white;
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        nav a:hover, .nav-item:hover {
+            color: var(--teal);
+        }
+
+        /* Dropdown Menu */
+        .nav-item {
+            margin-left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid rgba(14, 165, 181, 0.2);
+            border-radius: 8px;
+            min-width: 220px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 8px;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 16px;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-left: 0;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-menu a:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dropdown-menu a:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(14, 165, 181, 0.1);
+            border-left-color: var(--teal);
+            color: var(--teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            z-index: 1;
+        }
+
+        #heroCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80vh;
+            display: block;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            color: white;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 0;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(0, 150, 200, 0.15) 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            max-width: 600px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            color: var(--navy);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-content p {
+            color: var(--light-text);
+            font-size: 18px;
+            max-width: 500px;
+            margin-bottom: 32px;
+            font-weight: 300;
+            text-shadow: none;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            max-width: 500px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: rgba(255, 255, 255, 0.6);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            background: linear-gradient(135deg, var(--white) 0%, rgba(196, 241, 247, 0.1) 100%);
+            padding: 60px 0;
+            border-top: 1px solid rgba(14, 165, 181, 0.1);
+        }
+
+        .value-prop .container {
+            max-width: 800px;
+        }
+
+        .value-prop p {
+            font-size: 18px;
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            background: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        /* Services Cards (New) */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .service-card {
+            position: relative;
+            height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 40px rgba(14, 165, 181, 0.2);
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        .service-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .service-card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .service-card:hover .service-card-image {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-card-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+
+        .service-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px 24px;
+            z-index: 3;
+            color: white;
+            text-align: center;
+        }
+
+        .service-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-card-title {
+            transform: translateY(-4px);
+        }
+
+        /* Legacy service-item styles for backward compatibility if needed */
+        .service-item {
+            display: none;
+        }
+
+        .service-item-icon {
+            display: none;
+        }
+
+        .service-item-content h3 {
+            display: none;
+        }
+
+        .service-item-content p {
+            display: none;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: transparent;
+        }
+
+        .pricing-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: -12px auto 48px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .pricing-card {
+            background: #D4ECF0;
+            border-radius: 12px;
+            padding: 40px 32px;
+            border: 1px solid rgba(14, 165, 181, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--teal);
+            box-shadow: 0 12px 32px rgba(14, 165, 181, 0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--teal);
+            box-shadow: 0 12px 32px rgba(14, 165, 181, 0.15);
+            transform: scale(1.02);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--teal);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: none;
+        }
+
+        .pricing-card.featured .pricing-badge {
+            display: inline-block;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 16px;
+            margin-top: 12px;
+        }
+
+        .price-badge {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .price-description {
+            text-align: center;
+            color: var(--light-text);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--light-text);
+            font-size: 15px;
+        }
+
+        .checkmark {
+            color: var(--teal);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: white;
+            color: var(--navy);
+        }
+
+        .why-choose h2 {
+            color: var(--navy);
+            margin-bottom: 48px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 16px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .feature h3 {
+            color: var(--navy);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        /* Social Media Section */
+        .social-section {
+            background: linear-gradient(135deg, var(--navy) 0%, #0A3A47 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .social-section h2 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .social-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links-minimal {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            margin-top: 0;
+        }
+
+        .social-link-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link-icon:hover {
+            color: var(--cyan);
+            background: rgba(103, 209, 224, 0.2);
+            transform: scale(1.1);
+        }
+
+        .social-link-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Service Areas Section */
+        .service-areas {
+            background: white;
+        }
+
+        .service-areas-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: -12px auto 48px;
+        }
+
+        .service-areas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+        }
+
+        .service-area-region {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid rgba(14, 165, 181, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-area-region:hover {
+            border-color: var(--teal);
+            box-shadow: 0 8px 20px rgba(14, 165, 181, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .region-title {
+            padding: 20px;
+            cursor: pointer;
+            background: rgba(14, 165, 181, 0.05);
+            color: var(--navy);
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .region-title:hover {
+            background: rgba(14, 165, 181, 0.1);
+            color: var(--teal);
+        }
+
+        .area-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--teal);
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .region-areas {
+            overflow: hidden;
+            transition: all 0.3s ease;
+            max-height: 300px;
+        }
+
+        .region-areas.open {
+            max-height: none;
+        }
+
+        .area-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .area-item {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .area-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(14, 165, 181, 0.3);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--teal);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step h3 {
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #D4ECF0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .testimonial {
+            background: var(--off-white);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid rgba(14, 165, 181, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 15px;
+        }
+
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--navy) 0%, #0A3A47 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 48px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .contact-item-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .contact-item h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(103, 209, 224, 0.2);
+        }
+
+        #formContent {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .project-type-btn {
+            padding: 16px 48px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            flex: 1;
+        }
+
+        .project-type-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+        }
+
+        .project-type-btn.active {
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
+            border-color: var(--cyan);
+            color: white;
+            box-shadow: 0 8px 20px rgba(14, 165, 181, 0.4);
+        }
+
+        .project-type-btn.highlight {
+            animation: highlight-pulse 0.6s ease-in-out;
+            border-color: var(--cyan) !important;
+            border-width: 2px !important;
+        }
+
+        @keyframes highlight-pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(103, 209, 224, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(103, 209, 224, 0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 60px;
+            border-top: 1px solid rgba(14, 165, 181, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(14, 165, 181, 0.2);
+            padding-top: 32px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 40px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            header {
+                padding: 14px 20px;
+            }
+
+            .logo-container {
+                gap: 8px;
+            }
+
+            .logo-icon {
+                width: 65px;
+                height: 65px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 40px;
+                margin-top: 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-list,
+            .features-grid,
+            .steps-grid,
+            .testimonials-grid,
+            .pricing-grid,
+            .service-areas-container {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .social-link {
+                width: 100%;
+            }
+
+            footer {
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <a href="#" class="logo-container">
+            <!-- ClearVue Logo -->
+            <img src="assets/logo/header-logo.png?v=new2" alt="ClearVue" class="logo-icon" />
+        </a>
+        <nav>
+            <div class="nav-item">
+                Services ▼
+                <div class="dropdown-menu">
+                    <a href="exterior-window-cleaning.html">Exterior Window Cleaning</a>
+                    <a href="interior-window-cleaning.html">Interior Window Cleaning</a>
+                    <a href="screen-cleaning.html">Screen Cleaning</a>
+                    <a href="solar-panel-cleaning.html">Solar Panel Cleaning</a>
+                    <a href="commercial-window-cleaning.html">Commercial Window Cleaning</a>
+                </div>
+            </div>
+            <a href="#pricing">Pricing</a>
+            <a href="#why">Why Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Canvas Animation -->
+    <canvas id="heroCanvas"></canvas>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cleaner Views -<br>Brighter Living</h1>
+            <div class="hero-cta">
+                <button class="btn btn-primary" style="padding: 16px 48px; font-size: 18px; font-weight: 700;" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                <button class="btn btn-secondary" onclick="scrollToServices()">Learn More</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24">
+                <polyline points="12 5 12 19"></polyline>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-prop section-padding">
+        <div class="container">
+            <h2>Why ClearVue Exterior?</h2>
+            <p>We're not just another cleaning service. ClearVue Exterior is built on craftsmanship, quality equipment, and genuine care for every project. As an owner-operated business, every job receives personal attention and professional expertise.</p>
+        </div>
+    </section>
+
+    <!-- Services Section - Cards with Images -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-list">
+                <!-- Exterior Window Cleaning Card -->
+                <div class="service-card" onclick="navigateToService('exterior-window-cleaning.html')">
+                    <img src="assets/services/Exterior Window cleaning.png" alt="Exterior Window Cleaning" class="service-card-image">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Exterior Window Cleaning</h3>
+                    </div>
+                </div>
+
+                <!-- Interior Window Cleaning Card -->
+                <div class="service-card" onclick="navigateToService('interior-window-cleaning.html')">
+                    <img src="assets/services/Interior Window cleaning.png" alt="Interior Window Cleaning" class="service-card-image">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Interior Window Cleaning</h3>
+                    </div>
+                </div>
+
+                <!-- Screen Cleaning Card -->
+                <div class="service-card" onclick="navigateToService('screen-cleaning.html')">
+                    <img src="assets/services/Screen cleaning.png" alt="Screen Cleaning" class="service-card-image">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Screen Cleaning</h3>
+                    </div>
+                </div>
+
+                <!-- Solar Panel Cleaning Card -->
+                <div class="service-card" onclick="navigateToService('solar-panel-cleaning.html')">
+                    <img src="assets/services/Solar Panel cleaning.png" alt="Solar Panel Cleaning" class="service-card-image">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Solar Panel Cleaning</h3>
+                    </div>
+                </div>
+
+                <!-- Commercial Window Cleaning Card -->
+                <div class="service-card" onclick="navigateToService('commercial-window-cleaning.html')">
+                    <img src="assets/services/Commercial Window cleaning.png" alt="Commercial Window Cleaning" class="service-card-image">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Commercial Window Cleaning</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section class="pricing section-padding" id="pricing">
+        <div class="container">
+            <h2>Pricing Plans</h2>
+            <p class="pricing-subtitle">Choose the plan that works best for your home or business</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Monthly</h3>
+                    <div class="price-badge">$30 off per cleaning</div>
+                    <div class="price-description">Regular maintenance for pristine windows</div>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> Exterior & interior windows</li>
+                        <li><span class="checkmark">✓</span> Screen cleaning included</li>
+                        <li><span class="checkmark">✓</span> Consistent scheduling</li>
+                        <li><span class="checkmark">✓</span> Priority service</li>
+                        <li><span class="checkmark">✓</span> Loyalty discounts</li>
+                    </ul>
+                    <button class="btn btn-primary pricing-btn" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <h3>Quarterly</h3>
+                    <div class="price-badge">$50 off per cleaning</div>
+                    <div class="price-description">Seasonal deep cleaning & maintenance</div>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> Exterior & interior windows</li>
+                        <li><span class="checkmark">✓</span> Screen cleaning included</li>
+                        <li><span class="checkmark">✓</span> Flexible scheduling</li>
+                        <li><span class="checkmark">✓</span> Track cleaning included</li>
+                        <li><span class="checkmark">✓</span> 10% loyalty discount</li>
+                    </ul>
+                    <button class="btn btn-primary pricing-btn" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>One-Time</h3>
+                    <div class="price-badge">$0 off per cleaning</div>
+                    <div class="price-description">One-time or occasional service</div>
+                    <ul class="pricing-features">
+                        <li><span class="checkmark">✓</span> Exterior & interior windows</li>
+                        <li><span class="checkmark">✓</span> Screen cleaning included</li>
+                        <li><span class="checkmark">✓</span> No commitment required</li>
+                        <li><span class="checkmark">✓</span> Flexible scheduling</li>
+                        <li><span class="checkmark">✓</span> Same-day estimates</li>
+                    </ul>
+                    <button class="btn btn-primary pricing-btn" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section (Concise) -->
+    <section class="why-choose section-padding" id="why">
+        <div class="container">
+            <h2>Why Choose ClearVue Exterior</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Owner-Operated</h3>
+                        <p>Personal attention on every project.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Professional Equipment</h3>
+                        <p>Tacker, Sorbo, Moerman trusted tools.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Purified Water</h3>
+                        <p>Zero mineral residue, spotless results.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Attention to Detail</h3>
+                        <p>Meticulous craftsmanship guaranteed.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Honest Communication</h3>
+                        <p>Transparent pricing, no hidden fees.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Local & Trusted</h3>
+                        <p>Serving Orange County with excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"ClearVue Exterior exceeded our expectations. The attention to detail was incredible, and our windows have never looked better."</p>
+                    <div class="testimonial-author">Sarah M., Irvine</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Professional, punctual, and they really care about doing quality work. We'll definitely be using them again for our commercial property."</p>
+                    <div class="testimonial-author">John P., Orange County Business</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Best window cleaning service we've used. The owner personally oversees each job—you can tell he takes pride in his work."</p>
+                    <div class="testimonial-author">Michelle L., Laguna Beach</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Service Areas Section - Orange County Interactive Map -->
+    <section class="service-areas section-padding">
+        <div class="container">
+            <h2>Service Areas</h2>
+            <p class="service-areas-subtitle">We Proudly Serve All of Orange County</p>
+            <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 1.5rem;">
+                <!-- Service Areas Grid -->
+                <div style="background: transparent; border-radius: 16px; padding: 2rem; border: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #0EA5B5 0%, #1EBCC8 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(14, 165, 181, 0.2);">Anaheim</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #67D1E0 0%, #7FD9E8 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(103, 209, 224, 0.2);">Costa Mesa</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #0EA5B5 0%, #1EBCC8 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(14, 165, 181, 0.2);">Fullerton</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #67D1E0 0%, #80DAEB 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(103, 209, 224, 0.2);">Garden Grove</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #0EA5B5 0%, #1DBCC4 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(14, 165, 181, 0.2);">Huntington Beach</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #67D1E0 0%, #7EDDE8 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(103, 209, 224, 0.2);">Irvine</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #0EA5B5 0%, #1EB9C5 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(14, 165, 181, 0.2);">Laguna Beach</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #67D1E0 0%, #81DBE9 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(103, 209, 224, 0.2);">Mission Viejo</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #0EA5B5 0%, #17B8C1 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(14, 165, 181, 0.2);">Newport Beach</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #67D1E0 0%, #82DCEC 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(103, 209, 224, 0.2);">San Clemente</a>
+                        <a href="#" onclick="return false;" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #0EA5B5 0%, #17B8C1 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(14, 165, 181, 0.2);">Santa Ana</a>
+                    </div>
+                </div>
+
+                <style>
+                    a[style*="display: inline-block; padding: 0.75rem"] {
+                        cursor: pointer !important;
+                    }
+
+                    a[style*="display: inline-block; padding: 0.75rem"]:hover {
+                        transform: translateY(-2px) !important;
+                        box-shadow: 0 8px 24px rgba(14, 165, 181, 0.3) !important;
+                    }
+                </style>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+19494915774" style="color: inherit; text-decoration: none;">(949) 491-5774</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@clearvueexterior.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Hours</h3>
+                            <p>Mon–Sat: 7:00 AM – 6:00 PM<br>Sun: By appointment</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div style="width: 100%;">
+                            <h3 style="margin-bottom: 16px;">Follow Us</h3>
+                            <div class="social-links-minimal" style="display: flex; gap: 16px;">
+                                <a href="https://instagram.com" target="_blank" class="social-link-icon" title="Instagram">
+                                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="4.5"></rect>
+                                        <circle cx="12" cy="12" r="4.5"></circle>
+                                        <circle cx="17.5" cy="6.5" r="1"></circle>
+                                    </svg>
+                                </a>
+                                <a href="https://facebook.com" target="_blank" class="social-link-icon" title="Facebook">
+                                    <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12c0 4.99 3.66 9.12 8.45 9.87V15.8h-2.54V12h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.23.19 2.23.19v2.45h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.77l-.44 2.8h-2.33v6.08C18.34 21.12 22 16.99 22 12c0-5.52-4.48-10-10-10z"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://google.com/search" target="_blank" class="social-link-icon" title="Google">
+                                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <path d="M12 8v8M16 12h-8"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://yelp.com" target="_blank" class="social-link-icon" title="Yelp">
+                                    <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                                        <path d="M11 2.5L8.8 8.2c-.3.7.1 1.5.8 1.8l4.9 2.3-4.9 2.3c-.7.3-1.1 1.1-.8 1.8l2.2 5.7c.3.7 1 1.1 1.8 1.1s1.5-.4 1.8-1.1l4.9-12.2c.4-.9-.1-2-1.1-2.4-1-.4-2.1.1-2.4 1.1l-1.4 3.7-1.4-3.7c-.3-.7-1-1.1-1.8-1.1-.8 0-1.5.4-1.8 1.1z"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://thumbtack.com" target="_blank" class="social-link-icon" title="Thumbtack">
+                                    <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                                        <circle cx="12" cy="5" r="3"></circle>
+                                        <path d="M12 8.5L7 15h3v5h4v-5h3l-5-6.5z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <!-- Project Type Selection -->
+                    <div id="projectTypeSelection" style="margin-bottom: 20px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <button type="button" class="project-type-btn" data-type="residential" onclick="selectProjectType('residential')">
+                                Residential
+                            </button>
+                            <button type="button" class="project-type-btn" data-type="commercial" onclick="selectProjectType('commercial')">
+                                Commercial
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Form Fields (hidden until project type is selected) -->
+                    <div id="formContent" style="display: none !important;">
+                        <!-- Full Name Row -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                            </div>
+                        </div>
+
+                        <!-- Business Name Row (Commercial) -->
+                        <div id="commercialFields" class="form-row" style="display: none;">
+                            <div class="form-group">
+                                <input type="text" id="businessName" name="businessName" placeholder="Business Name">
+                            </div>
+                        </div>
+
+                        <!-- Phone Row -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                            </div>
+                        </div>
+
+                        <!-- Email Row -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+
+                        <!-- Property Address Row (Residential) -->
+                        <div id="residentialFields" class="form-row" style="display: none;">
+                            <div class="form-group">
+                                <input type="text" id="address" name="address" placeholder="Property Address" required>
+                            </div>
+                        </div>
+
+                        <!-- Business Address Row (Commercial only) -->
+                        <div id="commercialAddressRow" class="form-row" style="display: none;">
+                            <div class="form-group">
+                                <input type="text" id="businessAddress" name="businessAddress" placeholder="Business Address">
+                            </div>
+                        </div>
+
+                        <!-- Residential Services -->
+                        <div id="residentialServices" class="form-group" style="display: none;">
+                            <div style="display: flex; flex-direction: column; gap: 5px;">
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="window-exterior" style="margin-right: 8px;">
+                                    Window Cleaning Exterior
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="window-exterior-interior" style="margin-right: 8px;">
+                                    Window Cleaning Exterior + Interior
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="solar" style="margin-right: 8px;">
+                                    Solar Panel Cleaning
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="screen" style="margin-right: 8px;">
+                                    Screen Cleaning
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="track-detailing" style="margin-right: 8px;">
+                                    Track Detailing
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Commercial Services -->
+                        <div id="commercialServices" class="form-group" style="display: none;">
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="window-exterior" style="margin-right: 8px;">
+                                    Window Cleaning Exterior
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="window-exterior-interior" style="margin-right: 8px;">
+                                    Window Cleaning Exterior + Interior
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="solar" style="margin-right: 8px;">
+                                    Solar Panel Cleaning
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400;">
+                                    <input type="checkbox" name="service" value="storefront" style="margin-right: 8px;">
+                                    Store Window Cleaning
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 12px;">
+                                <textarea id="message" name="message" placeholder="Tell Us About Your Project" required style="min-height: 120px; border: none; background: transparent; padding: 0; font-family: 'Open Sans', sans-serif; font-size: 15px; color: #333; resize: vertical;"></textarea>
+                                <input type="file" id="photos" name="photos" multiple accept="image/*" style="opacity: 0; position: absolute; width: 0; height: 0;">
+                                <label for="photos" style="font-size: 14px; color: #333; cursor: pointer;">Add photos</label>
+                                <div id="filesDisplayed" style="font-size: 12px; color: #0EA5B5; margin: 0; display: none;"></div>
+                                <p style="font-size: 12px; color: #666; margin: 0;">You can select multiple photos. Max 10MB per file.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Get Your Quote Button - inside form, outside formContent -->
+                    <button type="button" class="btn btn-primary pricing-btn" onclick="submitForm()">GET YOUR QUOTE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function selectProjectType(type) {
+            // Update button active states
+            document.querySelectorAll('.project-type-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('highlight');
+            });
+            document.querySelector(`[data-type="${type}"]`).classList.add('active');
+
+            // Show form content
+            document.getElementById('formContent').style.display = 'block';
+
+            // Show/hide residential or commercial fields
+            const isResidential = type === 'residential';
+            document.getElementById('residentialFields').style.display = isResidential ? 'block' : 'none';
+            document.getElementById('commercialFields').style.display = isResidential ? 'none' : 'block';
+            document.getElementById('commercialAddressRow').style.display = isResidential ? 'none' : 'block';
+            document.getElementById('residentialServices').style.display = isResidential ? 'block' : 'none';
+            document.getElementById('commercialServices').style.display = isResidential ? 'none' : 'block';
+        }
+
+        function submitForm() {
+            // Check if a project type is selected
+            const activeBtn = document.querySelector('.project-type-btn.active');
+
+            if (!activeBtn) {
+                // Highlight both buttons to indicate selection is required
+                document.querySelectorAll('.project-type-btn').forEach(btn => {
+                    btn.classList.add('highlight');
+                    // Remove highlight class after animation
+                    setTimeout(() => {
+                        btn.classList.remove('highlight');
+                    }, 600);
+                });
+                return;
+            }
+
+            // If type is selected, submit the form
+            document.querySelector('form.contact-form').submit();
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ClearVue Exterior</h3>
+                <p>Professional window and exterior cleaning services in Orange County, California.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#services">Window Cleaning</a></li>
+                    <li><a href="#services">Solar Panel Cleaning</a></li>
+                    <li><a href="#services">Screen Cleaning</a></li>
+                    <li><a href="#services">Track Cleaning</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#why">Why ClearVue</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Google Reviews</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ClearVue Exterior. All rights reserved. | Cleaner Views. Brighter Living.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll-driven canvas animation (same as before)
+        class ScrollDrivenAnimation {
+            constructor() {
+                this.canvas = document.getElementById('heroCanvas');
+                this.ctx = this.canvas.getContext('2d', { alpha: false });
+
+                this.images = [
+                    'assets/references/clearvue-hero-reference_2.png'
+                ];
+
+                this.loadedImages = [];
+                this.scrollProgress = 0;
+                this.isLoading = true;
+
+                this.resizeCanvas();
+                this.loadImages();
+                this.setupEventListeners();
+                this.render();
+            }
+
+            resizeCanvas() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            loadImages() {
+                let loadedCount = 0;
+
+                this.images.forEach((src, index) => {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    img.onload = () => {
+                        this.loadedImages[index] = img;
+                        loadedCount++;
+                        if (loadedCount === this.images.length) {
+                            this.isLoading = false;
+                        }
+                    };
+                    img.onerror = () => {
+                        console.warn(`Failed to load image: ${src}`);
+                        loadedCount++;
+                        if (loadedCount === this.images.length) {
+                            this.isLoading = false;
+                        }
+                    };
+                    img.src = src;
+                });
+            }
+
+            setupEventListeners() {
+                window.addEventListener('scroll', () => this.updateScroll());
+                window.addEventListener('resize', () => this.resizeCanvas());
+            }
+
+            updateScroll() {
+                const heroHeight = window.innerHeight;
+                const scrolled = Math.max(0, window.scrollY - heroHeight);
+                const maxScroll = heroHeight;
+                this.scrollProgress = Math.min(1, scrolled / maxScroll);
+            }
+
+            drawImage(img, phase) {
+                if (!img) return;
+
+                const canvas = this.canvas;
+                const ctx = this.ctx;
+
+                const zoom = 1 + phase * 0.15;
+                const panX = Math.sin(phase * Math.PI * 2) * 20;
+                const panY = Math.cos(phase * Math.PI * 2) * 15;
+
+                const imgAspect = img.width / img.height;
+                const canvasAspect = canvas.width / canvas.height;
+
+                let drawWidth, drawHeight, drawX, drawY;
+
+                if (imgAspect > canvasAspect) {
+                    drawHeight = canvas.height * zoom;
+                    drawWidth = drawHeight * imgAspect;
+                } else {
+                    drawWidth = canvas.width * zoom;
+                    drawHeight = drawWidth / imgAspect;
+                }
+
+                drawX = (canvas.width - drawWidth) / 2 + panX;
+                drawY = (canvas.height - drawHeight) / 2 + panY;
+
+                ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+            }
+
+            blendImages(img1, img2, blendFactor) {
+                if (!img1 || !img2) return;
+
+                this.drawImage(img1, 0);
+                this.ctx.globalAlpha = blendFactor;
+                this.drawImage(img2, blendFactor);
+                this.ctx.globalAlpha = 1;
+            }
+
+            render = () => {
+                const ctx = this.ctx;
+                const progress = this.scrollProgress;
+
+                ctx.fillStyle = '#0D1B2A';
+                ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                if (this.isLoading || this.loadedImages.length === 0) {
+                    ctx.fillStyle = '#666';
+                    ctx.font = '16px Open Sans';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('Loading premium visuals..', this.canvas.width / 2, this.canvas.height / 2);
+                } else {
+                    // Single image with subtle zoom effect
+                    const zoomProgress = Math.min(progress * 0.2, 0.15);
+                    this.drawImage(this.loadedImages[0], zoomProgress);
+                }
+
+                requestAnimationFrame(this.render);
+            };
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            new ScrollDrivenAnimation();
+        });
+
+        // Smooth scroll functions
+        function scrollToServices() {
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Navigate to service page
+        function navigateToService(url) {
+            window.location.href = url;
+        }
+
+        // Service Areas Toggle (kept for backward compatibility if needed)
+        function toggleServiceArea(element) {
+            const regionAreas = element.nextElementSibling;
+            const toggle = element.querySelector('.area-toggle');
+
+            if (regionAreas && regionAreas.style.display === 'none') {
+                regionAreas.style.display = 'block';
+                toggle.textContent = '−';
+                regionAreas.classList.add('open');
+            } else if (regionAreas) {
+                regionAreas.style.display = 'none';
+                toggle.textContent = '+';
+                regionAreas.classList.remove('open');
+            }
+        }
+
+        // Window Cleaning Type - mutually exclusive
+        // Handle Residential Services
+        const residentialServices = document.getElementById('residentialServices');
+        if (residentialServices) {
+            const residentialWindowExterior = residentialServices.querySelector('input[value="window-exterior"]');
+            const residentialWindowExteriorInterior = residentialServices.querySelector('input[value="window-exterior-interior"]');
+
+            if (residentialWindowExterior && residentialWindowExteriorInterior) {
+                residentialWindowExterior.addEventListener('change', function() {
+                    if (this.checked) {
+                        residentialWindowExteriorInterior.checked = false;
+                    }
+                });
+
+                residentialWindowExteriorInterior.addEventListener('change', function() {
+                    if (this.checked) {
+                        residentialWindowExterior.checked = false;
+                    }
+                });
+            }
+        }
+
+        // Handle Commercial Services
+        const commercialServices = document.getElementById('commercialServices');
+        if (commercialServices) {
+            const commercialWindowExterior = commercialServices.querySelector('input[value="window-exterior"]');
+            const commercialWindowExteriorInterior = commercialServices.querySelector('input[value="window-exterior-interior"]');
+
+            if (commercialWindowExterior && commercialWindowExteriorInterior) {
+                commercialWindowExterior.addEventListener('change', function() {
+                    if (this.checked) {
+                        commercialWindowExteriorInterior.checked = false;
+                    }
+                });
+
+                commercialWindowExteriorInterior.addEventListener('change', function() {
+                    if (this.checked) {
+                        commercialWindowExterior.checked = false;
+                    }
+                });
+            }
+        }
+
+        // File upload display
+        const photosInput = document.getElementById('photos');
+        const filesDisplayed = document.getElementById('filesDisplayed');
+
+        if (photosInput) {
+            photosInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    let fileNames = '';
+                    for (let i = 0; i < this.files.length; i++) {
+                        fileNames += this.files[i].name;
+                        if (i < this.files.length - 1) {
+                            fileNames += ', ';
+                        }
+                    }
+                    filesDisplayed.textContent = '✓ Files selected: ' + fileNames;
+                    filesDisplayed.style.display = 'block';
+                } else {
+                    filesDisplayed.style.display = 'none';
+                }
+            });
+        }
+
+        // Form submission (basic)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We\'ll contact you soon to discuss your free estimate.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

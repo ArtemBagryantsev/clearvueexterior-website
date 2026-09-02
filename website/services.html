@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Exterior Services | ClearVue Exterior</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1A3A52;
+            --teal: #00B8E6;
+            --cyan: #00D4FF;
+            --sky: #E0F7FF;
+            --orange: #FF8C00;
+            --sunset: #FF6B35;
+            --gray: #6B7280;
+            --light-gray: #F9FAFB;
+            --white: #FFFFFF;
+            --off-white: #F3F4F6;
+            --dark-gray: #1F2937;
+            --light-text: #4B5563;
+            --light-bg: #D4ECF0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--light-text);
+            line-height: 1.6;
+            background: linear-gradient(to right, #FFFFFF 0%, #A8E5ED 50%, #85D5E0 100%);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--navy);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange), var(--sunset));
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 0px 40px;
+            height: 80px;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo-icon {
+            width: auto;
+            height: 240px;
+            display: block;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            object-fit: contain;
+            line-height: 0;
+            margin: -70px 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0EA5B5 0%, #67D1E0 100%);
+            padding: 200px 2rem 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            animation: slideUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            color: white;
+            line-height: 1.8;
+            animation: slideUp 0.8s ease 0.2s backwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Section */
+        .services-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-linear {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
+
+        .service-item-linear {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+        }
+
+        .service-item-linear.reverse {
+            direction: rtl;
+        }
+
+        .service-item-linear.reverse > * {
+            direction: ltr;
+        }
+
+        .service-item-linear-image {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .service-item-linear-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item-linear:hover .service-item-linear-image img {
+            transform: scale(1.05);
+        }
+
+        .service-item-linear-content {
+            position: relative;
+        }
+
+        .service-item-linear-content h3 {
+            font-size: 2rem;
+            color: #0D1B2A;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .service-item-linear-content p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .service-features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-features-list li {
+            padding: 0.4rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .service-features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .faq-toggle {
+            display: block;
+            margin-top: 1rem;
+            padding: 0.5rem 0;
+            background: none;
+            border: none;
+            color: var(--teal);
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: left;
+        }
+
+        .faq-toggle:hover {
+            color: var(--cyan);
+        }
+
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-faq {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f0f0f0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .service-faq.active {
+            max-height: 1200px;
+        }
+
+        .service-faq .faq-item {
+            margin-bottom: 1rem;
+            animation: fadeInSlideUp 0.4s ease-out backwards;
+        }
+
+        .service-faq .faq-item:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .service-faq .faq-item:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .service-faq .faq-item:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .service-faq .faq-item:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .service-faq .faq-item:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .service-faq .faq-item:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .service-faq .faq-question {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-faq .faq-answer {
+            padding: 0.8rem 0;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            padding-left: 1rem;
+            border-left: 2px solid #f0f0f0;
+        }
+
+
+        .btn-service {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-service:hover {
+            background: var(--sunset);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Process Section */
+        .process-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f7ff 100%);
+            padding: 6rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .process-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--teal), var(--cyan));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--teal);
+            opacity: 0.5;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, #0b2540 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 16px;
+            margin: 4rem auto;
+            max-width: 1000px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0D1B2A;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 0px 20px;
+            }
+
+            .hero {
+                padding: 150px 1rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .service-item-linear {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-item-linear.reverse {
+                direction: ltr;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="assets/logo/header-logo.png?v=new2" alt="ClearVue" class="logo-icon" />
+        </a>
+        <nav id="navMenu">
+            <a href="about.html">About Us</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Professional Exterior Cleaning Services</h1>
+            <p>Crystal-clear windows, sparkling solar panels, and immaculate exteriors. Your satisfaction is our guarantee.</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive exterior cleaning solutions tailored to your needs. Each service delivers exceptional results with professional equipment and expert care.</p>
+        </div>
+
+        <div class="services-linear">
+            <!-- Service 1: Exterior Window Cleaning -->
+            <div class="service-item-linear">
+                <div class="service-item-linear-image">
+                    <img src="assets/services/Exterior Window cleaning.png" alt="Exterior Window Cleaning">
+                </div>
+                <div class="service-item-linear-content">
+                    <h3>Exterior Window Cleaning</h3>
+                    <p>Transform your view with crystal-clear, streak-free windows that enhance curb appeal and flood natural light into your home.</p>
+                    <ul class="service-features-list">
+                        <li>Professional-grade equipment</li>
+                        <li>Streak-free guaranteed</li>
+                        <li>All window types safe</li>
+                    </ul>
+                    <button class="btn btn-service" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                    <button class="faq-toggle" onclick="toggleServiceFaq(this)">FAQ</button>
+                    <div class="service-faq">
+                        <div class="faq-item">
+                            <div class="faq-question">What makes ClearVue's exterior window cleaning different?</div>
+                            <div class="faq-answer">We use an exclusive four-step process: thorough scrubbing, water removal, detailed finishing, and application of our protective RainBlock coating. Your windows stay cleaner and protected longer than with conventional methods.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Can you clean high-rise buildings?</div>
+                            <div class="faq-answer">Absolutely. Our experienced team is equipped with modern equipment and safety gear to work at any height. Safety is our top priority, so you can trust us with any building.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How often should windows be cleaned?</div>
+                            <div class="faq-answer">For consistently clean windows, we recommend a regular cleaning schedule. Depending on your climate and environmental factors, quarterly or twice-yearly cleanings deliver the best results.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What if it rains after my cleaning?</div>
+                            <div class="faq-answer">We offer a 7-day guarantee. If it rains shortly after we clean your windows, simply call us and we'll return to restore their spotless appearance at no extra cost.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Do you offer discounts for regular services?</div>
+                            <div class="faq-answer">Yes! Our ClearVue Membership program offers substantial savings, including discounts on each cleaning, free RainBlock coating applications, and exclusive member benefits.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How do I schedule a cleaning?</div>
+                            <div class="faq-answer">It's easy. Call us directly or book through our website, selecting the date and time that works best for your window cleaning needs.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2: Interior Window Cleaning -->
+            <div class="service-item-linear reverse">
+                <div class="service-item-linear-image">
+                    <img src="assets/services/Interior Window cleaning.png" alt="Interior Window Cleaning">
+                </div>
+                <div class="service-item-linear-content">
+                    <h3>Interior Window Cleaning</h3>
+                    <p>Remove dust, fingerprints, and grime to create a bright, welcoming atmosphere inside your home with meticulous detail.</p>
+                    <ul class="service-features-list">
+                        <li>Complete inside cleaning</li>
+                        <li>Frame & sill detailing</li>
+                        <li>Safe product application</li>
+                    </ul>
+                    <button class="btn btn-service" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                    <button class="faq-toggle" onclick="toggleServiceFaq(this)">FAQ</button>
+                    <div class="service-faq">
+                        <div class="faq-item">
+                            <div class="faq-question">What is included in interior window cleaning service?</div>
+                            <div class="faq-answer">Our interior window cleaning includes thorough washing and detailing of each window pane, sills, and tracks. We apply our proprietary protective coating for a cleaner, longer-lasting shine.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How often should I schedule interior window cleaning?</div>
+                            <div class="faq-answer">For best results and maintenance, we recommend recurring cleaning services. Choose from monthly, quarterly, or seasonal plans based on your needs and lifestyle.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Are your technicians experienced and reliable?</div>
+                            <div class="faq-answer">Absolutely! Our technicians are trained professionals who are detail-oriented and committed to excellence. They undergo regular training to meet our high quality standards.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How do you protect my home during cleaning?</div>
+                            <div class="faq-answer">Our team uses protective coverings as needed and works carefully to prevent any mess. We respect your home and leave it as clean as we found it—just with cleaner windows!</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Can I get a free quote before booking?</div>
+                            <div class="faq-answer">Yes! ClearVue offers free quotes and estimates. Contact us to discuss your needs, and we'll provide a transparent, no-obligation estimate for your interior cleaning service.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What if I'm not satisfied with the result?</div>
+                            <div class="faq-answer">Customer satisfaction is our priority. If you're not happy with our work, contact us immediately and we'll make it right. We're committed to leaving all clients fully satisfied.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: Screen Cleaning -->
+            <div class="service-item-linear">
+                <div class="service-item-linear-image">
+                    <img src="assets/services/Screen cleaning.png" alt="Screen Cleaning">
+                </div>
+                <div class="service-item-linear-content">
+                    <h3>Screen Cleaning</h3>
+                    <p>Complete window restoration including screens, frames, and tracks for the full cleaning experience you deserve.</p>
+                    <ul class="service-features-list">
+                        <li>Frame & track cleaning</li>
+                        <li>Mesh restoration</li>
+                        <li>Detail-oriented service</li>
+                    </ul>
+                    <button class="btn btn-service" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                    <button class="faq-toggle" onclick="toggleServiceFaq(this)">FAQ</button>
+                    <div class="service-faq">
+                        <div class="faq-item">
+                            <div class="faq-question">What areas do you serve?</div>
+                            <div class="faq-answer">ClearVue proudly serves communities across multiple counties and regions. Contact us to confirm if we service your area and to schedule your screen cleaning today.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How often should I have screens professionally cleaned?</div>
+                            <div class="faq-answer">We recommend professional screen cleaning at least twice a year. Depending on environmental factors and your preferences, some clients prefer quarterly services for optimal clarity.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What is included in screen cleaning service?</div>
+                            <div class="faq-answer">Our screen cleaning service includes thorough washing of all window screens, ensuring they're free from dirt, dust, and debris for clear visibility and maximum light flow.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Do you offer recurring cleaning services?</div>
+                            <div class="faq-answer">Yes! ClearVue offers recurring screen and window cleaning packages to keep your screens spotless year-round. Our Membership program provides easy scheduling, exclusive discounts, and free bonuses.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How do you ensure my satisfaction?</div>
+                            <div class="faq-answer">Our team is dedicated to delivering top-quality service. We don't leave until you're completely satisfied with our work. Our staff are professional, courteous, and provide the attention to detail that ensures sparkling results.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What if it rains after my screens are cleaned?</div>
+                            <div class="faq-answer">With our RainBlock Technology, we offer a 7-day rain guarantee. If your screens take on water spots within a week after cleaning due to rain, we'll return and touch them up at no additional cost.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: Solar Panel Cleaning -->
+            <div class="service-item-linear reverse">
+                <div class="service-item-linear-image">
+                    <img src="assets/services/Solar Panel cleaning.png" alt="Solar Panel Cleaning">
+                </div>
+                <div class="service-item-linear-content">
+                    <h3>Solar Panel Cleaning</h3>
+                    <p>Maximize energy efficiency by keeping panels pristine. Dust and debris reduction optimizes your renewable energy output.</p>
+                    <ul class="service-features-list">
+                        <li>Increases panel efficiency</li>
+                        <li>Eco-friendly methods</li>
+                        <li>Regular maintenance plans</li>
+                    </ul>
+                    <button class="btn btn-service" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                    <button class="faq-toggle" onclick="toggleServiceFaq(this)">FAQ</button>
+                    <div class="service-faq">
+                        <div class="faq-item">
+                            <div class="faq-question">Why do I need solar panel cleaning?</div>
+                            <div class="faq-answer">Dust, pollen, and debris accumulate on solar panels, reducing their efficiency. Regular cleaning ensures they operate at maximum effectiveness, helping you save on energy costs.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How often should I clean my solar panels?</div>
+                            <div class="faq-answer">We recommend cleaning every six months, but this depends on your local environment. High pollen areas, dust storms, or construction may require more frequent cleaning.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Will cleaning increase my solar panels' lifespan?</div>
+                            <div class="faq-answer">Yes! Keeping panels pristine prevents damage from dirt buildup, ensuring they operate effectively longer and reducing the need for costly replacements.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Should I clean panels myself or hire a professional?</div>
+                            <div class="faq-answer">Professional cleaning ensures thoroughness and safety. Our team is trained and equipped to clean without risking panel damage or voiding warranties.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What makes ClearVue's solar panel cleaning stand out?</div>
+                            <div class="faq-answer">We utilize specialized techniques and equipment to ensure panels are meticulously cleaned without damage. Our proven track record and satisfied customers underscore our commitment to quality.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Can panel cleaning reduce my energy bill?</div>
+                            <div class="faq-answer">Absolutely! Clean panels absorb sunlight more efficiently, directly increasing energy production. This means lower energy bills and increased savings over time.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5: Commercial Window Cleaning -->
+            <div class="service-item-linear">
+                <div class="service-item-linear-image">
+                    <img src="assets/services/Commercial Window cleaning.png" alt="Commercial Window Cleaning">
+                </div>
+                <div class="service-item-linear-content">
+                    <h3>Commercial Cleaning</h3>
+                    <p>Professional solutions for offices, retail spaces, and multi-story buildings with efficiency and minimal disruption.</p>
+                    <ul class="service-features-list">
+                        <li>Multi-story expertise</li>
+                        <li>Minimal disruption</li>
+                        <li>Custom scheduling</li>
+                    </ul>
+                    <button class="btn btn-service" onclick="scrollToContact()">GET YOUR QUOTE</button>
+                    <button class="faq-toggle" onclick="toggleServiceFaq(this)">FAQ</button>
+                    <div class="service-faq">
+                        <div class="faq-item">
+                            <div class="faq-question">Can you work during business hours without disrupting operations?</div>
+                            <div class="faq-answer">Absolutely! We specialize in scheduling around your business needs. Our team works early mornings, evenings, and weekends to ensure zero disruption to your daily operations and customer experience.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Do you have insurance and bonding for commercial properties?</div>
+                            <div class="faq-answer">Yes, we are fully insured and bonded. Our comprehensive coverage protects your property and gives you peace of mind. We can provide proof of insurance upon request.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What commercial properties do you service?</div>
+                            <div class="faq-answer">We handle offices, retail spaces, medical facilities, banks, restaurants, and multi-story buildings. Our expertise spans various industries and building sizes, from small offices to large corporate complexes.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How often should commercial windows be cleaned?</div>
+                            <div class="faq-answer">We recommend monthly or quarterly cleaning for most commercial properties. High-traffic areas or facilities with special requirements may benefit from more frequent service. We'll assess your needs and recommend the best schedule.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Can you provide cleaning services for multiple locations?</div>
+                            <div class="faq-answer">Yes! If you have multiple properties across different locations, we can coordinate comprehensive cleaning schedules. This often results in discounted rates for multi-location contracts.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Do you offer maintenance contracts with guarantees?</div>
+                            <div class="faq-answer">Absolutely. We provide customized maintenance agreements tailored to your facility's needs. Our service guarantee ensures professional results with dedicated support and emergency response capabilities.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="process-header">
+            <h2>Our Process</h2>
+            <p>Simple, transparent, and effective. Here's how we deliver exceptional results every time.</p>
+        </div>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-number">1</div>
+                <h3>Schedule</h3>
+                <p>Book your service online or by phone. We'll find a convenient time that works for you.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">2</div>
+                <h3>Inspect</h3>
+                <p>Our team arrives on time and inspects your property to plan the best approach.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">3</div>
+                <h3>Clean</h3>
+                <p>We clean with precision using professional equipment and eco-friendly solutions.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">4</div>
+                <h3>Verify</h3>
+                <p>We walk you through the results and ensure you're completely satisfied.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready for Sparkling Clean?</h2>
+        <p>Join over 1,000 satisfied customers who trust ClearVue Exterior for professional results.</p>
+        <button class="btn btn-primary" onclick="scrollToContact()">Schedule Your Service Today</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ClearVue Exterior. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToContact() {
+            window.location.href = 'index.html#contact';
+        }
+
+        function toggleServiceFaq(button) {
+            const faqSection = button.nextElementSibling;
+            faqSection.classList.toggle('active');
+            button.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

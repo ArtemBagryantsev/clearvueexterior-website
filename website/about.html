@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About ClearVue Exterior - Professional window cleaning services in Orange County">
+    <title>About Us | ClearVue Exterior | Orange County</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1A3A52;
+            --teal: #00B8E6;
+            --cyan: #00D4FF;
+            --sky: #E0F7FF;
+            --orange: #FF8C00;
+            --sunset: #FF6B35;
+            --gray: #6B7280;
+            --light-gray: #F9FAFB;
+            --white: #FFFFFF;
+            --off-white: #F3F4F6;
+            --dark-gray: #1F2937;
+            --light-text: #4B5563;
+            --light-bg: #D4ECF0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--light-text);
+            line-height: 1.6;
+            background: linear-gradient(to right, #FFFFFF 0%, #A8E5ED 50%, #85D5E0 100%);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 56px;
+        }
+
+        h2 {
+            font-size: 42px;
+            color: var(--navy);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--sunset);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--teal);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Header / Navigation */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 0px 40px;
+            height: 80px;
+            overflow: visible;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-icon {
+            width: auto;
+            height: 240px;
+            display: block;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            object-fit: contain;
+            line-height: 0;
+            margin: -70px 0;
+        }
+
+        .logo-container:hover .logo-icon {
+            filter: drop-shadow(0 4px 12px rgba(14, 165, 181, 0.25));
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--teal);
+        }
+
+        nav {
+            display: flex;
+            gap: 0;
+        }
+
+        nav a, .nav-item {
+            color: white;
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        nav a:hover, .nav-item:hover {
+            color: var(--teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            z-index: 1;
+        }
+
+        #heroCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80vh;
+            display: block;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            color: white;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 0;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(0, 150, 200, 0.15) 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            max-width: 600px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            color: var(--navy);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-content p {
+            color: var(--light-text);
+            font-size: 18px;
+            max-width: 500px;
+            margin-bottom: 32px;
+            font-weight: 300;
+            text-shadow: none;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            max-width: 500px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: rgba(255, 255, 255, 0.6);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            padding: 60px 0;
+            border-top: 1px solid rgba(14, 165, 181, 0.1);
+        }
+
+        .value-prop .container {
+            max-width: 800px;
+        }
+
+        .value-prop p {
+            font-size: 18px;
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        /* Services Cards (New) */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .service-card {
+            position: relative;
+            height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 40px rgba(14, 165, 181, 0.2);
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        .service-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .service-card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .service-card:hover .service-card-image {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-card-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+
+        .service-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px 24px;
+            z-index: 3;
+            color: white;
+            text-align: center;
+        }
+
+        .service-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-card-title {
+            transform: translateY(-4px);
+        }
+
+        /* Legacy service-item styles for backward compatibility if needed */
+        .service-item {
+            display: none;
+        }
+
+        .service-item-icon {
+            display: none;
+        }
+
+        .service-item-content h3 {
+            display: none;
+        }
+
+        .service-item-content p {
+            display: none;
+        }
+
+        /* Pricing Section */
+        .pricing {
+        }
+
+        .pricing-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: -12px auto 48px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px 32px;
+            border: 1px solid rgba(14, 165, 181, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(8px);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--teal);
+            box-shadow: 0 12px 32px rgba(14, 165, 181, 0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--teal);
+            box-shadow: 0 12px 32px rgba(14, 165, 181, 0.15);
+            transform: scale(1.02);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--teal);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: none;
+        }
+
+        .pricing-card.featured .pricing-badge {
+            display: inline-block;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 16px;
+            margin-top: 12px;
+        }
+
+        .price-badge {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .price-description {
+            text-align: center;
+            color: var(--light-text);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--light-text);
+            font-size: 15px;
+        }
+
+        .checkmark {
+            color: var(--teal);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            color: var(--navy);
+        }
+
+        .why-choose h2 {
+            color: var(--navy);
+            margin-bottom: 48px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 16px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .feature h3 {
+            color: var(--navy);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        /* Social Media Section */
+        .social-section {
+            background: linear-gradient(135deg, var(--navy) 0%, #0A3A47 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .social-section h2 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .social-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links-minimal {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            margin-top: 0;
+        }
+
+        .social-link-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link-icon:hover {
+            color: var(--cyan);
+            background: rgba(103, 209, 224, 0.2);
+            transform: scale(1.1);
+        }
+
+        .social-link-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Service Areas Section */
+        .service-areas {
+        }
+
+        .service-areas-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: -12px auto 48px;
+        }
+
+        .service-areas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+        }
+
+        .service-area-region {
+            border-radius: 8px;
+            border: 1px solid rgba(14, 165, 181, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-area-region:hover {
+            border-color: var(--teal);
+            box-shadow: 0 8px 20px rgba(14, 165, 181, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .region-title {
+            padding: 20px;
+            cursor: pointer;
+            background: rgba(14, 165, 181, 0.05);
+            color: var(--navy);
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .region-title:hover {
+            background: rgba(14, 165, 181, 0.1);
+            color: var(--teal);
+        }
+
+        .area-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--teal);
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .region-areas {
+            overflow: hidden;
+            transition: all 0.3s ease;
+            max-height: 300px;
+        }
+
+        .region-areas.open {
+            max-height: none;
+        }
+
+        .area-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .area-item {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .area-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(14, 165, 181, 0.3);
+        }
+
+        /* How It Works */
+        .how-it-works {
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--teal);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step h3 {
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonials {
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .testimonial {
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid rgba(14, 165, 181, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 15px;
+        }
+
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--navy) 0%, #0A3A47 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 48px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .contact-item-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .contact-item h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(103, 209, 224, 0.2);
+        }
+
+        #formContent {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .project-type-btn {
+            padding: 16px 48px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(26, 58, 82, 0.5);
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            flex: 1;
+        }
+
+        .project-type-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+        }
+
+        .project-type-btn.active {
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
+            border-color: var(--cyan);
+            color: white;
+            box-shadow: 0 8px 20px rgba(14, 165, 181, 0.4);
+        }
+
+        .project-type-btn.highlight {
+            animation: highlight-pulse 0.6s ease-in-out;
+            border-color: var(--cyan) !important;
+            border-width: 2px !important;
+        }
+
+        @keyframes highlight-pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(103, 209, 224, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(103, 209, 224, 0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 60px;
+            border-top: 1px solid rgba(14, 165, 181, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(14, 165, 181, 0.2);
+            padding-top: 32px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 40px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            header {
+                padding: 14px 20px;
+            }
+
+            .logo-container {
+                gap: 8px;
+            }
+
+            .logo-icon {
+                height: 240px;
+                margin: -70px 0;
+                flex-shrink: 0;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .hero-content {
+                padding: 40px;
+                margin-top: 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-list,
+            .features-grid,
+            .steps-grid,
+            .testimonials-grid,
+            .pricing-grid,
+            .service-areas-container {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .social-link {
+                width: 100%;
+            }
+
+            footer {
+                padding: 40px;
+            }
+        }
+
+        /* Lightbox Styles */
+        .gallery-item {
+            cursor: pointer;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        .lightbox-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--orange);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* About Page Styles */
+        .about-hero {
+            background: linear-gradient(135deg, #5BA3C4 0%, #67B7D1 100%);
+            padding: 100px 40px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .about-hero h1 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .about-hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-hero .breadcrumb {
+            margin-bottom: 16px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .about-hero a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .about-card {
+            background: white;
+            border: 4px solid var(--teal);
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .about-card h2 {
+            color: var(--navy);
+            font-size: 32px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .about-card > p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .about-card-items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .about-card-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 16px;
+            color: var(--navy);
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            gap: 6px;
+            z-index: 101;
+        }
+
+        .hamburger-menu span {
+            width: 28px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: flex;
+            }
+
+            header {
+                padding: 0px 20px;
+                height: 70px;
+            }
+
+            nav {
+                display: flex;
+                position: fixed;
+                top: 70px;
+                left: 20px;
+                right: 20px;
+                background: rgba(26, 58, 82, 0.98);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                border-radius: 0 0 16px 16px;
+                padding: 0;
+                z-index: 99;
+            }
+
+            nav.active {
+                max-height: 500px !important;
+                visibility: visible !important;
+                padding: 20px 0 !important;
+            }
+
+            nav a, .nav-item {
+                margin-left: 0;
+                padding: 12px 20px;
+                font-size: 16px;
+                color: white;
+                text-shadow: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav a:last-child,
+            nav .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            .dropdown-menu {
+                position: static;
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: none;
+                border: none;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                margin-top: 0;
+            }
+
+            .nav-item.active .dropdown-menu {
+                max-height: 300px;
+            }
+
+            .nav-item.active::before {
+                content: " ▲";
+            }
+
+            .nav-item::before {
+                content: " ▼";
+            }
+
+            .dropdown-menu a {
+                padding: 10px 20px 10px 40px;
+                font-size: 14px;
+            }
+        }
+
+        .locally-owned-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .locally-owned-grid {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="assets/logo/header-logo.png?v=new2" alt="ClearVue" class="logo-icon" />
+        </a>
+        <button class="hamburger-menu" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="navMenu">
+            <a href="index.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <p class="breadcrumb"><a href="index.html">Home</a> / About Us</p>
+            <h1>About ClearVue Exterior Services</h1>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto;">Premium exterior cleaning with dedication and professional pride</p>
+        </div>
+    </section>
+
+    <!-- Locally Owned & Operated Card with Who We Are -->
+    <section style="padding: 80px 40px; background: linear-gradient(to right, #FFFFFF 0%, #A8E5ED 50%, #85D5E0 100%);">
+        <div class="container" style="max-width: 1200px;">
+            <div class="locally-owned-grid">
+                <!-- Card -->
+                <div style="background: white; border: 4px solid var(--teal); border-radius: 16px; padding: 50px 40px; text-align: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
+                    <h2 style="color: var(--navy); font-size: 28px; margin-bottom: 16px;">Locally Owned & Operated</h2>
+                    <p style="color: #666; font-size: 15px; margin-bottom: 32px;">Dedicated to serving Orange County homeowners and businesses with personalized, professional service</p>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 16px; color: var(--navy);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26H21.77L16.54 12.45L18.63 18.71L12 14.52L5.37 18.71L7.46 12.45L2.23 8.26H8.91L12 2Z" fill="#00B8E6"/>
+                            </svg>
+                            30+ Five-Star Reviews
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 16px; color: var(--navy);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1C6.48 1 2 5.48 2 11C2 13.54 2.96 15.85 4.54 17.54L3 23L8.46 20.54C10.15 21.54 12.08 22 14 22C19.52 22 24 17.52 24 12C24 6.48 19.52 2 14 2H12M12 20C10.47 20 8.96 19.5 7.76 18.54L5.73 19.62L7.05 17.07C5.56 15.42 4.56 13.3 4.56 11C4.56 7.31 7.92 4.31 12 4.31C16.08 4.31 19.44 7.31 19.44 11C19.44 14.69 16.08 17.69 12 17.69M15.5 12.5H13.5V10.5H12.5V12.5H10.5V13.5H12.5V15.5H13.5V13.5H15.5V12.5Z" fill="#00B8E6"/>
+                            </svg>
+                            Licensed & Insured
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 16px; color: var(--navy);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="13" width="3" height="8" fill="#00B8E6"/>
+                                <rect x="10.5" y="8" width="3" height="13" fill="#00B8E6"/>
+                                <rect x="18" y="3" width="3" height="18" fill="#00B8E6"/>
+                            </svg>
+                            70+ Projects Completed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Who We Are Text -->
+                <div>
+                    <h2 style="color: var(--navy); font-size: 36px; margin-bottom: 28px; line-height: 1.2;">Who We Are</h2>
+                    <p style="color: #666; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">A locally owned company committed to excellence — <strong>no shortcuts, no compromises, just quality work.</strong></p>
+                    <p style="color: #666; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">From crystal-clear windows to spotless gutters and professional holiday lighting, we transform your home's exterior while respecting your property and your time.</p>
+                    <p style="color: #666; font-size: 16px; line-height: 1.8;">We listen, we explain, and we deliver results you can trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Homeowners Choose ClearVue -->
+    <section style="padding: 80px 40px; background: linear-gradient(to left, #FFFFFF 0%, #A8E5ED 50%, #85D5E0 100%);">
+        <div class="container">
+            <h2 style="color: var(--navy); font-size: 36px; margin-bottom: 12px; text-align: center;">Why Choose ClearVue</h2>
+            <p style="color: #666; font-size: 16px; text-align: center; margin-bottom: 48px;">We've built our reputation one satisfied customer at a time</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                <!-- Card 1: Quality Commitment -->
+                <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                    <div style="width: 70px; height: 70px; background: var(--teal); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 2L24.47 14.53H37.53L27.03 21.47L31.5 34L20 27.07L8.5 34L12.97 21.47L2.47 14.53H15.53L20 2Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: var(--navy); font-size: 20px; margin-bottom: 12px;">Quality Commitment</h3>
+                    <p style="color: #666; font-size: 14px;">Excellent results — our standard</p>
+                </div>
+                <!-- Card 2: Peace of Mind -->
+                <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                    <div style="width: 70px; height: 70px; background: var(--teal); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 2L8 7V15C8 24 20 32 20 32C20 32 32 24 32 15V7L20 2Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: var(--navy); font-size: 20px; margin-bottom: 12px;">Peace of Mind</h3>
+                    <p style="color: #666; font-size: 14px;">Full insurance coverage and safety guarantees</p>
+                </div>
+                <!-- Card 3: Professional Equipment -->
+                <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                    <div style="width: 70px; height: 70px; background: #F4C464; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 8H26V6C26 4.9 25.1 4 24 4H16C14.9 4 14 4.9 14 6V8H12C10.9 8 10 8.9 10 10V32C10 33.1 10.9 34 12 34H28C29.1 34 30 33.1 30 32V10C30 8.9 29.1 8 28 8ZM16 6H24V8H16V6ZM20 28C17.79 28 16 26.21 16 24C16 21.79 17.79 20 20 20C22.21 20 24 21.79 24 24C24 26.21 22.21 28 20 28Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: var(--navy); font-size: 20px; margin-bottom: 12px;">Professional Equipment</h3>
+                    <p style="color: #666; font-size: 14px;">Using state-of-the-art professional-grade equipment</p>
+                </div>
+                <!-- Card 4: Transparent Pricing -->
+                <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                    <div style="width: 70px; height: 70px; background: var(--cyan); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 2C10.06 2 2 10.06 2 20C2 29.94 10.06 38 20 38C29.94 38 38 29.94 38 20C38 10.06 29.94 2 20 2ZM20 6C26.63 6 32 11.37 32 18H8C8 11.37 13.37 6 20 6ZM20 34C13.37 34 8 28.63 8 22H32C32 28.63 26.63 34 20 34Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: var(--navy); font-size: 20px; margin-bottom: 12px;">Transparent Pricing</h3>
+                    <p style="color: #666; font-size: 14px;">Honest prices with no hidden costs</p>
+                </div>
+                <!-- Card 5: Attention to Detail -->
+                <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                    <div style="width: 70px; height: 70px; background: var(--teal); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="9" stroke="white" stroke-width="2" fill="none"/>
+                            <path d="M28 28L35 35" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: var(--navy); font-size: 20px; margin-bottom: 12px;">Attention to Detail</h3>
+                    <p style="color: #666; font-size: 14px;">Meticulous work at every stage</p>
+                </div>
+                <!-- Card 6: Long-Term Partnership -->
+                <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                    <div style="width: 70px; height: 70px; background: var(--teal); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 16C7.79 16 6 17.79 6 20C6 22.21 7.79 24 10 24C12.21 24 14 22.21 14 20C14 17.79 12.21 16 10 16ZM30 16C27.79 16 26 17.79 26 20C26 22.21 27.79 24 30 24C32.21 24 34 22.21 34 20C34 17.79 32.21 16 30 16ZM14 20C14 18.9 14.9 18 16 18H24C25.1 18 26 18.9 26 20C26 21.1 25.1 22 24 22H16C14.9 22 14 21.1 14 20Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: var(--navy); font-size: 20px; margin-bottom: 12px;">Long-Term Partnership</h3>
+                    <p style="color: #666; font-size: 14px;">Focused on long-term partnerships with our clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Reviews from Real Customers -->
+    <section style="padding: 80px 40px; background: linear-gradient(to left, #FFFFFF 0%, #A8E5ED 50%, #85D5E0 100%);">
+        <div class="container">
+            <h2 style="color: var(--navy); font-size: 36px; margin-bottom: 12px; text-align: center;">Real Reviews from Real Customers</h2>
+            <p style="color: #666; font-size: 16px; text-align: center; margin-bottom: 48px;">What Orange County homeowners and businesses say about working with ClearVue</p>
+
+            <div style="position: relative; margin-bottom: 80px;">
+                <div style="overflow: hidden; max-width: 1120px; margin: 0 auto; width: 100%;">
+                    <div id="carouselTrack" style="display: flex; gap: 20px; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                        <div style="flex: 0 0 360px; opacity: 0.6; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; height: 320px;"><p style="color: #F4C464; margin: 0 0 12px 0; font-size: 16px;">★★★★★</p><p style="color: #666; font-size: 13px; line-height: 1.6; flex-grow: 1; margin: 0 0 16px 0;">ClearVue transformed my windows! Professional, punctual, thorough. They treated my home with care!</p><div style="display: flex; justify-content: space-between; align-items: flex-end;"><div style="display: flex; align-items: center; gap: 8px;"><div style="flex-shrink: 0; width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px;">JM</div><div><p style="margin: 0; font-weight: 600; color: var(--navy); font-size: 13px;">Jennifer Martinez</p><p style="margin: 0; font-size: 11px; color: #999;">Homeowner</p></div></div><div style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px;"><span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC04;">o</span><span style="color: #4285F4;">g</span><span style="color: #EA4335;">l</span><span style="color: #34A853;">e</span></div></div></div>
+                        <div style="flex: 0 0 360px; opacity: 0.6; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; height: 320px;"><p style="color: #F4C464; margin: 0 0 12px 0; font-size: 16px;">★★★★★</p><p style="color: #666; font-size: 13px; line-height: 1.6; flex-grow: 1; margin: 0 0 16px 0;">For our commercial property, ClearVue delivered exceptional results. They're reliable, efficient, and always go the extra mile. Our windows have never looked better!</p><div style="display: flex; justify-content: space-between; align-items: flex-end;"><div style="display: flex; align-items: center; gap: 8px;"><div style="flex-shrink: 0; width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px;">RK</div><div><p style="margin: 0; font-weight: 600; color: var(--navy); font-size: 13px;">Robert Kim</p><p style="margin: 0; font-size: 11px; color: #999;">Business Owner</p></div></div><div style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px;"><span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC04;">o</span><span style="color: #4285F4;">g</span><span style="color: #EA4335;">l</span><span style="color: #34A853;">e</span></div></div></div>
+                        <div style="flex: 0 0 360px; opacity: 0.6; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; height: 320px;"><p style="color: #F4C464; margin: 0 0 12px 0; font-size: 16px;">★★★★★</p><p style="color: #666; font-size: 13px; line-height: 1.6; flex-grow: 1; margin: 0 0 16px 0;">Antonio's team fantastic! Respectful, on time, outstanding quality. Already referred to friends!</p><div style="display: flex; justify-content: space-between; align-items: flex-end;"><div style="display: flex; align-items: center; gap: 8px;"><div style="flex-shrink: 0; width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px;">SD</div><div><p style="margin: 0; font-weight: 600; color: var(--navy); font-size: 13px;">Sarah Davis</p><p style="margin: 0; font-size: 11px; color: #999;">Homeowner</p></div></div><div style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px;"><span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC04;">o</span><span style="color: #4285F4;">g</span><span style="color: #EA4335;">l</span><span style="color: #34A853;">e</span></div></div></div>
+                        <div style="flex: 0 0 360px; opacity: 0.6; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; height: 320px;"><p style="color: #F4C464; margin: 0 0 12px 0; font-size: 16px;">★★★★★</p><p style="color: #666; font-size: 13px; line-height: 1.6; flex-grow: 1; margin: 0 0 16px 0;">Game-changer for our office building. Professional, reliable, exceptional attention to detail!</p><div style="display: flex; justify-content: space-between; align-items: flex-end;"><div style="display: flex; align-items: center; gap: 8px;"><div style="flex-shrink: 0; width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px;">MC</div><div><p style="margin: 0; font-weight: 600; color: var(--navy); font-size: 13px;">Michael Chen</p><p style="margin: 0; font-size: 11px; color: #999;">Business Owner</p></div></div><div style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px;"><span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC04;">o</span><span style="color: #4285F4;">g</span><span style="color: #EA4335;">l</span><span style="color: #34A853;">e</span></div></div></div>
+                    </div>
+                </div>
+                <button onclick="moveCarousel(-1)" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: var(--teal); color: white; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 24px; z-index: 10;">‹</button>
+                <button onclick="moveCarousel(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background: var(--teal); color: white; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 24px; z-index: 10;">›</button>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 8px; margin-top: 48px; margin-bottom: 60px;">
+                <div class="dot" onclick="goToSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: var(--teal); cursor: pointer;"></div>
+                <div class="dot" onclick="goToSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(0, 184, 230, 0.3); cursor: pointer;"></div>
+                <div class="dot" onclick="goToSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(0, 184, 230, 0.3); cursor: pointer;"></div>
+                <div class="dot" onclick="goToSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(0, 184, 230, 0.3); cursor: pointer;"></div>
+            </div>
+        </div>
+
+        <script>
+            window.currentSlide = 0;
+            window.totalSlides = 4;
+
+            window.moveCarousel = function(direction) {
+                const newSlide = window.currentSlide + direction;
+                if (newSlide >= 0 && newSlide < window.totalSlides) {
+                    window.currentSlide = newSlide;
+                    window.updateCarousel();
+                }
+            };
+
+            window.goToSlide = function(index) {
+                window.currentSlide = index;
+                window.updateCarousel();
+            };
+
+            window.updateCarousel = function() {
+                const track = document.getElementById('carouselTrack');
+                const offsets = [260, 0, -260, -520];
+                const offset = offsets[window.currentSlide];
+                track.style.transform = `translateX(${offset}px)`;
+
+                const centerCardIndex = window.currentSlide;
+                const cards = track.children;
+                for (let i = 0; i < cards.length; i++) {
+                    const isCenter = i === centerCardIndex;
+                    if (isCenter) {
+                        cards[i].style.opacity = '1';
+                        cards[i].style.boxShadow = '0 8px 24px rgba(0, 184, 230, 0.4)';
+                    } else {
+                        cards[i].style.opacity = '0.6';
+                        cards[i].style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+                    }
+                }
+
+                document.querySelectorAll('.dot').forEach((dot, index) => {
+                    dot.style.background = index === window.currentSlide ? 'var(--teal)' : 'rgba(0, 184, 230, 0.3)';
+                });
+            };
+
+            window.updateCarousel();
+        </script>
+    </section>
+
+    <!-- Experience the Difference CTA -->
+    <section style="background: var(--teal); color: white; padding: 80px 40px; text-align: center;">
+        <div class="container">
+            <div style="width: 80px; height: 80px; background: white; border-radius: 50%; margin: 0 auto 32px; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 40px;">✓</span>
+            </div>
+            <h2 style="color: white; font-size: 36px; margin-bottom: 16px;">Experience the ClearVue Difference</h2>
+            <p style="font-size: 18px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Request a free quote today and discover why homeowners across Orange County trust ClearVue for their exterior service needs</p>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
+                <button class="btn btn-primary" style="background: white; color: var(--teal); font-weight: 600;">Request Your Free Quote</button>
+                <button class="btn" style="background: transparent; color: white; border: 2px solid white; font-weight: 600; cursor: pointer;">📞 Call: (949) 414-9977</button>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span>⭐</span> 5.0 Rating on Google
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span>🛡️</span> Licensed & Insured
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span>📍</span> Serving Orange County
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking on links
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburgerBtn.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Toggle dropdown menu on mobile
+            const navItems = navMenu.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
