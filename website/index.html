@@ -2297,14 +2297,11 @@
         }
 
         function submitForm() {
-            // Check if a project type is selected
             const activeBtn = document.querySelector('.project-type-btn.active');
 
             if (!activeBtn) {
-                // Highlight both buttons to indicate selection is required
                 document.querySelectorAll('.project-type-btn').forEach(btn => {
                     btn.classList.add('highlight');
-                    // Remove highlight class after animation
                     setTimeout(() => {
                         btn.classList.remove('highlight');
                     }, 600);
@@ -2312,8 +2309,72 @@
                 return;
             }
 
-            // If type is selected, submit the form
-            document.querySelector('form.contact-form').submit();
+            const projectType = activeBtn.getAttribute('data-type');
+            const formData = {
+                projectType: projectType,
+                name: document.getElementById('name')?.value || '',
+                phone: document.getElementById('phone')?.value || '',
+                email: document.getElementById('email')?.value || '',
+                address: document.getElementById('address')?.value || '',
+                businessName: document.getElementById('businessName')?.value || '',
+                businessAddress: document.getElementById('businessAddress')?.value || '',
+                services: [],
+                message: document.getElementById('message')?.value || ''
+            };
+
+            const serviceCheckboxes = document.querySelectorAll(
+                `#${projectType === 'residential' ? 'residential' : 'commercial'}Services input[type="checkbox"]:checked`
+            );
+            serviceCheckboxes.forEach(checkbox => {
+                formData.services.push(checkbox.value);
+            });
+
+            if (!formData.name || !formData.phone || !formData.email) {
+                alert('Пожалуйста, заполните все обязательные поля (имя, телефон, email)');
+                return;
+            }
+
+            if (!formData.message) {
+                alert('Пожалуйста, опишите ваш проект');
+                return;
+            }
+
+            if (formData.services.length === 0) {
+                alert('Пожалуйста, выберите хотя бы одну услугу');
+                return;
+            }
+
+            const btn = document.querySelector('.contact-form .btn-primary');
+            const originalText = btn.textContent;
+            btn.textContent = 'Отправляю...';
+            btn.disabled = true;
+
+            fetch('https://quote-bot.artembagrjancev.workers.dev/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('✅ ' + data.message);
+                    document.querySelector('form.contact-form').reset();
+                    document.getElementById('formContent').style.display = 'none';
+                    document.querySelectorAll('.project-type-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                } else {
+                    alert('❌ ' + (data.error || 'Ошибка при отправке заявки'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('❌ Ошибка при отправке. Свяжитесь по телефону.');
+            })
+            .finally(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
         }
     </script>
 

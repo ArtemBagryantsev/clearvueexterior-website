@@ -72,7 +72,9 @@
       "Bash(git push *)",
       "Bash(grep -n \"^        \\\\.[a-z-]* {$\" \"/Users/artembagryantsev/Documents/Claude Code/Window Cleaning website/website/index.html\")",
       "Bash(grep -A1 \"^        \\\\.[a-z-]* {$\" \"/Users/artembagryantsev/Documents/Claude Code/Window Cleaning website/website/index.html\")",
-      "Bash(awk '$1 > 1')"
+      "Bash(awk '$1 > 1')",
+      "Bash(brew install *)",
+      "Bash(git ls-tree *)"
     ]
   }
 }
