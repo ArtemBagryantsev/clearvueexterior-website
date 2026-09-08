@@ -1,0 +1,8 @@
+run = "cd telegram-bot && python telegram_bot.py"
+modules = ["python-3.10"]
+
+[nix]
+channel = "stable-23_11"
+
+[deployment]
+run = ["sh", "-c", "cd telegram-bot && python telegram_bot.py"]
