@@ -2361,7 +2361,7 @@
                 return;
             }
 
-            btn.textContent = 'Загружаю фото...';
+            btn.textContent = 'Uploading photos...';
             btn.disabled = true;
 
             let loadedCount = 0;
@@ -2383,7 +2383,7 @@
 
             function sendFormData(data, btnOriginalText) {
                 const btn = document.querySelector('.contact-form .btn-primary');
-                btn.textContent = 'Отправляю...';
+                btn.textContent = 'Sending...';
 
                 fetch('https://quote-bot.artembagrjancev.workers.dev/', {
                     method: 'POST',
@@ -2393,7 +2393,7 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('✅ ' + data.message);
+                        alert('✅ Thank you for your request! We will contact you soon.');
                         document.querySelector('form.contact-form').reset();
                         document.getElementById('formContent').style.display = 'none';
                         document.querySelectorAll('.project-type-btn').forEach(btn => {
