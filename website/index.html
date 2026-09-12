@@ -2353,13 +2353,14 @@
                 return;
             }
 
+            const btn = document.querySelector('.contact-form .btn-primary');
+            const originalText = btn.textContent;
+
             if (files.length === 0) {
-                sendFormData(formData);
+                sendFormData(formData, originalText);
                 return;
             }
 
-            const btn = document.querySelector('.contact-form .btn-primary');
-            const originalText = btn.textContent;
             btn.textContent = 'Загружаю фото...';
             btn.disabled = true;
 
@@ -2374,13 +2375,13 @@
                     });
                     loadedCount++;
                     if (loadedCount === files.length) {
-                        sendFormData(formData);
+                        sendFormData(formData, originalText);
                     }
                 };
                 reader.readAsDataURL(file);
             });
 
-            function sendFormData(data) {
+            function sendFormData(data, btnOriginalText) {
                 const btn = document.querySelector('.contact-form .btn-primary');
                 btn.textContent = 'Отправляю...';
 
@@ -2407,7 +2408,7 @@
                     alert('❌ Ошибка при отправке. Свяжитесь по телефону.');
                 })
                 .finally(() => {
-                    btn.textContent = originalText;
+                    btn.textContent = btnOriginalText;
                     btn.disabled = false;
                 });
             }
