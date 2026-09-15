@@ -2131,8 +2131,6 @@
                             </svg>
                         </div>
                         <div>
-                            <h3>Hours</h3>
-                            <p>Mon-Sun: 8:00 AM - 6:00 PM</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -2562,10 +2560,7 @@
                 ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
                 if (this.isLoading || this.loadedImages.length === 0) {
-                    ctx.fillStyle = '#666';
-                    ctx.font = '16px Open Sans';
-                    ctx.textAlign = 'center';
-                    ctx.fillText('Loading premium visuals..', this.canvas.width / 2, this.canvas.height / 2);
+                    // Show blank dark background while loading
                 } else {
                     // Single image with subtle zoom effect
                     const zoomProgress = Math.min(progress * 0.2, 0.15);
